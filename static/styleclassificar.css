@@ -5,6 +5,7 @@ body {
     padding: 40px;
     display: flex;
     justify-content: center;
+    margin-top: 5%;
 }
 
 @font-face {
@@ -113,4 +114,54 @@ body {
     .titulo { font-size: 22px; }
     .descricao { font-size: 14px; }
     .pdf-icon { width: 30px; height: 30px; }
+}
+
+
+/* Top navigation (as in image) */
+.topnav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 78px;
+  background: #f2f2f2;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 36px;
+  z-index: 200;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo img {
+  height: 36px;
+}
+.navlinks {
+  margin: 0 auto;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+}
+.navlinks a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* botão estilo pill, não achatado */
+.btn-custom {
+  min-width: 120px; /* garante largura mínima */
+  height: 44px; /* mantém altura consistente */
+  background-color: #98d96a;
+  color: #fff;
+  border: none;
+  border-radius: 999px; /* pill */
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }

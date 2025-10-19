@@ -6,6 +6,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styleselecionar.css') }}">
 </head>
 <body>
+
+  <header class="topnav">
+  <div class="logo">
+    <a href="/">
+    <img src="static/img/logo.png" alt="Avatar" class="rounded-circle ms-5" style="height:100%;">
+      </a>
+  </div>
+
+  <nav class="navlinks">
+    <a href="#">Funcionalidades</a>
+    <a href="#">Sobre</a>
+    <a href="#">Equipe</a>
+    <a href="#">Contato</a>
+    <a href="{{ url_for('perfil') }}">Perfil</a>
+  </nav>
+
+  <div class="nav-btn">
+    <a href="/login">
+      <button type="button" class="btn-custom">Entrar</button>
+    </a>
+  </div>
+</header>
     
     <!-- Formulário de login -->
     <form method="POST" action="/geraresumo">
