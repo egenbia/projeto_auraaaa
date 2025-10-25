@@ -1,0 +1,166 @@
+:root {
+  --branco: #f2f2f2;
+  --roxo_vivo: #9857f2;
+  --roxo_escuro: #4f3673;
+  --preto: #262626;
+  --verde: #98d96a;
+  --cinza: #d4d3d3;
+}
+
+@font-face {
+  font-family: "Adam-Bold";
+  src: url(../font/Adam-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Adam-Light";
+  src: url(../font/Adam-Light.ttf);
+}
+
+@font-face {
+  font-family: "Tommy-Light";
+  src: url(../font/MADE\ TOMMY\ Light_PERSONAL\ USE.otf);
+}
+
+@font-face {
+  font-family: "Tommy-Bold";
+  src: url(../font/MADE\ TOMMY\ Bold_PERSONAL\ USE.otf);
+}
+
+@font-face {
+  font-family: "Tommy-Medium";
+  src: url(../font/MADE\ TOMMY\ Medium_PERSONAL\ USE.otf);
+}
+
+@font-face {
+  font-family: "Tommy-Regular";
+  src: url(../fontes/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf);
+}
+
+body {
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--preto);
+  text-align: center;
+  font-family: "Tommy-Bold";
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--preto);
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: "Tommy-Medium";
+}
+
+.btn-upload {
+  display: inline-block;
+  background-color: var(--verde);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s;
+  box-shadow: 0px 10px 21px 5px #0000001a;
+  font-family: 'Tommy-Medium';
+}
+
+.btn-upload:hover {
+  background-color: #78cc59;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.upload-area {
+    border: 1.5px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-area:hover {
+    border-color: var(--roxo_escuro);
+    border: 1.5px;
+    background-color: var(--roxo_vivo);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+}
+
+.upload-area:hover .upload-text {
+  color: var(--branco);
+}
+
+.upload-area:active {
+    transform: translateY(0);
+}
+
+.upload-icon {
+    font-size: 48px;
+    color: #bdc3c7;
+    margin-bottom: 15px;
+    background-image: url(../imgs/arquivo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 150px; 
+    height: 150px; 
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.upload-area:hover .upload-icon {
+    color: var(--roxo_vivo);
+    background-image: url(../imgs/botao_select.png);
+    width: 150px; 
+    height: 150px; 
+}
+
+.upload-text {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    font-size: 18px;
+    margin-top: 20px;
+    font-family: 'Tommy-Light';
+}
+
+.file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}

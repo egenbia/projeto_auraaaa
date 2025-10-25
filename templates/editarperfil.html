@@ -2,37 +2,15 @@
 <html lang="pt-BR">
 <head> <meta charset="utf-8" /> 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Editar Perfil</title> <link rel="stylesheet" href="{{ url_for('static', filename='styleeditarperfil.css') }}">
+<title>Editar Perfil</title> <link rel="stylesheet" href="/static/css/styleeditarperfil.css">
 </head>
 <body>
-<header class="topnav">
-  <div class="logo">
-    <a href="/perfil">
-    <img src="static/img/logo.png" alt="Avatar" class="rounded-circle ms-5" style="height:100%;">
-      </a>
-  </div>
-
-  <nav class="navlinks">
-    <a href="#">Funcionalidades</a>
-    <a href="#">Sobre</a>
-    <a href="#">Equipe</a>
-    <a href="#">Contato</a>
-    <a href="{{ url_for('perfil') }}">Perfil</a>
-  </nav>
-
-  <div class="nav-btn">
-    <a href="/login">
-      <button type="button" class="btn-custom">Entrar</button>
-    </a>
-  </div>
-</header>
-
   <div class="wrap">
     <section class="card form-center" aria-label="Editar perfil">
       <h1 class="title">Perfil</h1>
 
       <div class="avatar">
-        <img src="{{ url_for('static', filename='img/estudante.jpg') }}" alt="avatar">
+        <img src="../static/imgs/estudante.jpg" alt="avatar">
       </div>
 
       <a href="#" class="btn-change">Mudar foto</a>

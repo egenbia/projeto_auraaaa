@@ -3,32 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Gerar Perguntas</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styleperguntas.css') }}">
+  <link rel="stylesheet" href="../static/css/styleperguntas.css" type="text/css">
 </head>
 <body>
-
-  <header class="topnav">
-  <div class="logo">
-    <a href="/">
-    <img src="static/img/logo.png" alt="Avatar" class="rounded-circle ms-5" style="height:100%;">
-      </a>
-  </div>
-
-  <nav class="navlinks">
-    <a href="#">Funcionalidades</a>
-    <a href="#">Sobre</a>
-    <a href="#">Equipe</a>
-    <a href="#">Contato</a>
-    <a href="{{ url_for('perfil') }}">Perfil</a>
-  </nav>
-
-  <div class="nav-btn">
-    <a href="/login">
-      <button type="button" class="btn-custom">Entrar</button>
-    </a>
-  </div>
-</header>
-
   <main class="container">
 
     <form method="POST" action="/perguntas">
@@ -39,8 +16,8 @@
       <!-- PDF Card -->
 <div class="pdf-card">
   <div class="pdf-card-left">
-    <img src="{{ url_for('static', filename='img/pdf-icon.png') }}" alt="PDF Icon" class="pdf-icon">
-    <p>Artigo-científico.pdf</p>
+    <img src="../static/imgs/pdf-icon.png" alt="PDF Icon" class="pdf-icon">
+    <p id="fileNameDisplay">Artigo-científico.pdf</p>
   </div>
   <div class="pdf-card-right">
     <span class="pdf-size">0,33 MB</span>
@@ -125,6 +102,13 @@
       }
     });
   });
+
+
+    const fileName = sessionStorage.getItem("uploadedFileName");
+    if (fileName) {
+      document.getElementById("fileNameDisplay").textContent = fileName;
+    }
+
 </script>
 
 

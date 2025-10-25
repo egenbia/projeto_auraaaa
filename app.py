@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from db import cursor, db  # supondo que db.py exporte a conexão e o cursor
-from werkzeug.security import generate_password_hash, check_password_hash
-
 app = Flask(__name__)
 app.secret_key = "aura"  # Pode ser qualquer string segura
 
@@ -26,15 +24,11 @@ def login():
         usuario = cursor.fetchone()
 
         if usuario:
-            session["user_id"] = usuario["id"]    # salva o ID do usuário
-            session["nome"] = usuario["nome"]     # salva o nome do usuário
             return redirect(url_for("index"))
         else:
-             erro = "Usuário ou senha inválidos"
-
+            erro = "Usuário ou senha inválidos"
 
     return render_template("login.html", erro=erro)
-
 
 # Rota de cadastro
 @app.route("/cadastro", methods=["GET", "POST"])
@@ -67,6 +61,7 @@ def cadastro():
 # Rota Gerar Resumo
 @app.route("/geraresumo", methods=["GET", "POST"])
 def geraresumo():
+    return render_template('geraresumo.html')
     # Aqui você pega os dados armazenados na sessão (ou usa valores padrão)
     pdf_url = session.get("uploaded_pdf", "/static/exemplo.pdf")  # PDF padrão
     resumo = session.get("resumo", "Aqui vai o resumo gerado automaticamente.")
@@ -164,6 +159,36 @@ def citacoes():
     
     return render_template("citacoes.html", total_citacoes=total_citacoes, referencias=referencias)
 
+# Leitor de artigos - GERAR RESUMO
+@app.route('/leitorArtigos-gerarResumo')
+def leitor_artigos():
+    return render_template('leitorArtigos-gerarResumo.html') 
+
+# Leitor de artigos - ÁUDIO
+@app.route('/leitorArtigos-audio')
+def leitor_artigos_audio():
+    return render_template('leitorArtigos-audio.html') 
+
+# Leitor de artigos - SELECIONAR
+@app.route('/leitorArtigos-selecionar')
+def leitor_artigos_selecionar():
+    return render_template('leitorArtigos-selecionar.html') 
+
+# Leitor de artigos - PERGUNTAS
+@app.route('/leitorArtigos-perguntas')
+def leitor_artigos_perguntas():
+    return render_template('leitorArtigos-perguntas.html')
+
+# Leitor de artigos - CLASSIFICAR
+@app.route('/leitorArtigos-classificar')
+def leitor_artigos_classificar():
+    return render_template('leitorArtigos-classificar.html')
+
+# Leitor de artigos - CITAÇÕES
+@app.route('/leitorArtigos-citacoes')
+def leitor_artigos_citacoes():
+    return render_template('leitorArtigos-citacoes.html')
+
 #perfil
 @app.route("/perfil")
 def perfil():
@@ -207,9 +232,6 @@ def editarperfil():
 
     return render_template("editarperfil.html", usuario=usuario)
 
-
-
- 
 # Rota alterar senha
 @app.route("/alterarsenha", methods=["GET", "POST"])
 def alterarsenha():
@@ -265,6 +287,6 @@ def excluirhistorico():
     # db.commit()
     return redirect(url_for("perfil"))  # volta para perfil
 
-
 if __name__ == "__main__":
     app.run(debug=True)
+    
