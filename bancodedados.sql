@@ -18,3 +18,13 @@ ALTER TABLE usuarios
 ADD COLUMN membro_desde DATETIME DEFAULT CURRENT_TIMESTAMP;
 
 UPDATE usuarios SET senha = SHA2(senha, 256);
+
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY '';
+FLUSH PRIVILEGES;
+
+CREATE USER 'noask'@'localhost' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'noask'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+

@@ -4,7 +4,7 @@ import mysql.connector
 db = mysql.connector.connect(
     host="localhost",
     user="root",           # usuário do MySQL
-    password="Caramuj0_",  # senha do usuário
+    password="",  # senha do usuário
     database="aura_db"     # nome do banco de dados
 )
 
